@@ -1,0 +1,9 @@
+{
+  "name": "Object Intelligence",
+  "short_name": "Object AI",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#10243b",
+  "description": "Understand objects around you"
+}

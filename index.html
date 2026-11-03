@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10243b">
+  <title>Object Intelligence</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark">OI</div><div><strong>Object Intelligence</strong><small data-i18n="tagline">افهم العالم من حولك</small></div></div>
+    <select id="language" aria-label="Language">
+      <option value="ar">العربية</option><option value="de">Deutsch</option><option value="en">English</option>
+    </select>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow" data-i18n="eyebrow">مساعدك الذكي لفهم الأشياء</div>
+      <h1 data-i18n="headline">صوّر أي شيء.<br><span>واكتشف كيف يعمل.</span></h1>
+      <p data-i18n="intro">التقط صورة لقطعة أو جهاز أو أداة، وسنساعدك على معرفة اسمها ووظيفتها.</p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><h2 data-i18n="scanTitle">افحص شيئاً جديداً</h2><p data-i18n="scanDesc">اختر صورة من جهازك أو افتح الكاميرا.</p></div>
+        <div class="camera-icon">⌁</div>
+      </div>
+      <div class="upload-area" id="dropZone">
+        <div class="upload-symbol">＋</div>
+        <strong data-i18n="dropTitle">أضف صورة الشيء</strong>
+        <span data-i18n="dropHint">JPG أو PNG أو WEBP</span>
+        <div class="actions">
+          <label class="button primary" for="fileInput" data-i18n="choosePhoto">اختيار صورة</label>
+          <label class="button secondary" for="cameraInput" data-i18n="takePhoto">التقاط صورة</label>
+        </div>
+        <input id="fileInput" type="file" accept="image/*" hidden>
+        <input id="cameraInput" type="file" accept="image/*" capture="environment" hidden>
+      </div>
+      <div id="previewWrap" class="preview-wrap" hidden>
+        <img id="preview" alt="Selected object preview">
+        <button id="removeImage" class="remove" aria-label="Remove image">×</button>
+      </div>
+      <label class="field-label" for="extraInfo" data-i18n="extraLabel">معلومة إضافية (اختياري)</label>
+      <textarea id="extraInfo" rows="2" data-i18n-placeholder="extraPlaceholder" placeholder="مثلاً: وجدتها داخل محرك سيارة..."></textarea>
+      <button id="analyzeBtn" class="button analyze" disabled data-i18n="analyze">حلّل الصورة</button>
+      <p class="privacy" data-i18n="privacy">خصوصيتك مهمة: لا تحفظ هذه النسخة الصور على جهاز أو خادم.</p>
+    </section>
+
+    <section id="result" class="panel result" hidden aria-live="polite">
+      <div class="result-head"><div><div class="eyebrow" data-i18n="resultEyebrow">نتيجة الفحص</div><h2 data-i18n="resultTitle">الصورة جاهزة للتحليل</h2></div><span class="status" data-i18n="demoStatus">نسخة أولية</span></div>
+      <div class="notice"><strong data-i18n="notConnectedTitle">محرك الذكاء الاصطناعي غير مربوط بعد</strong><p data-i18n="notConnectedText">هذه نسخة واجهة أولية: اختيار الصورة ومعاينتها يعملان، لكن التعرف الحقيقي على الأشياء يحتاج ربط خدمة ذكاء اصطناعي آمنة من خلال خادم.</p></div>
+      <h3 data-i18n="nextTitle">ما الذي سيظهر هنا بعد الربط؟</h3>
+      <ul class="feature-list">
+        <li data-i18n="f1">اسم الشيء ومدى الثقة في التعرف عليه</li>
+        <li data-i18n="f2">وظيفته وكيف يعمل</li>
+        <li data-i18n="f3">المواد والأجزاء والاستخدامات الشائعة</li>
+        <li data-i18n="f4">تنبيهات السلامة ومتى يجب الاستعانة بفني</li>
+      </ul>
+    </section>
+
+    <section class="how">
+      <h2 data-i18n="howTitle">كيف سيعمل التطبيق؟</h2>
+      <div class="steps">
+        <div><b>1</b><strong data-i18n="step1">صوّر الشيء</strong><span data-i18n="step1d">التقط صورة واضحة.</span></div>
+        <div><b>2</b><strong data-i18n="step2">حلّل الصورة</strong><span data-i18n="step2d">يفحصها الذكاء الاصطناعي.</span></div>
+        <div><b>3</b><strong data-i18n="step3">تعلّم عنه</strong><span data-i18n="step3d">اقرأ شرحاً بسيطاً ومفيداً.</span></div>
+      </div>
+    </section>
+  </main>
+  <footer><span>Object Intelligence</span><span data-i18n="footer">نموذج أولي — الإصدار 0.1</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
